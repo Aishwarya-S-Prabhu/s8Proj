@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demand Forecasting</title>
+</head>
+
+<body>
+    <h1>Demand Forecasting</h1>
+    {% if forecast %}
+    <h2 style="padding-top: 70px;"> Demand Forecast for Product {{ selected_product }} in Shop {{selected_shop}}:</h2>
+    <div style="display:flex;">
+        <table>
+            {% for month, demand in forecast.items %}
+            <tr>
+                <td>{{ month }}</td>
+                <td>{{ demand }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div id="graph-container" style="width: 600px; height: 400px;">
+            <img style="max-width: 100%; height: auto; margin-top: -250px; padding-left: 350px;" src="data:image/png;base64,{{ plot_data }}" alt="Forecast Plot">
+        </div>
+    </div>
+    {% endif %}
+</body>
+
+</html>

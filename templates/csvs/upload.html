@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %}
+{% block title %}CSV Page {% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body style="margin: 60px; color: aliceblue;" >
+    
+    <form action="{% url 'upload_csv' %}" method="POST" enctype="multipart/form-data" style="color: rgb(206, 157, 83);margin: 60px;">
+      {% csrf_token %} {{form}}
+      <input class="btn my-card" style="box-shadow: 2px 1px 5px rgb(245, 220, 109); color: rgb(219, 184, 119);" type="submit" name="Upload CSV" />
+    </form>
+  </body>
+</html>
+{% endblock %}

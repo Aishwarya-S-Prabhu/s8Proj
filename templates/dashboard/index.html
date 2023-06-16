@@ -1,0 +1,86 @@
+{% extends 'partials/base.html' %}
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_staff and user.is_superuser%}
+
+
+    <!--Graphs-->
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-md-6 p-3 m-4">
+                <a class="text-decoration-none" href = "/DFOwner" >
+                    <div class="card my-card shadow text-center p-3">
+                <h4>Forecast Demand <i class="fas fa-sharp fa-solid fa-briefcase"></i></h4>
+               
+            </div></a>  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 p-3 m-4">
+        <a class="text-decoration-none text-dark" href="{% url 'vmowner' %}">
+            <div class="card my-card shadow text-center p-3">
+                <h4>Lets go! <i class="fas fa-sharp fa-solid fa-briefcase"></i></h4>
+               
+            </div>
+        </a>
+    </div>
+   
+</div>
+        
+    </div>
+    <!--End Graphs-->
+    {% elif user.is_authenticated and user.is_staff%}
+    {% include 'dashboard/staff_index.html' %}
+    {% elif producer %}
+    <div class=" p-3" style="color: #b9566f;"><h5>Welcome, {{user.username}}</h5></div>
+
+    <div class="container-fluid">
+    <div class="row">
+        <div
+        class="col-xl-6 col-lg-6 col-md-6 text-white p-3 m-4"
+        
+        >
+        <div class="row mt-4">
+            <div class="col-md-6" >
+                <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;"></div>
+                    <div class="card-header bg-secondary text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                    background-image:linear-gradient(
+                        to right, 
+                        #d33f7d 0%,
+                        #b9566f 51%,
+                        #f1da71 100%
+                    );
+                    border-color: #ce8edf; color: black;">
+                        About Us
+                    </div>
+                    <div class="card-body" style="color: #bb3980;">
+                      <p>This software will be used for generating reports in a visually 
+                        attractive and easy to understand manner. This software uses the 
+                        datasets from a chain of stores and from analyzing the  data, reports would 
+                        be generated for the user for ease of understanding. Using trend analysis we 
+                        would be able to predict its scope or demand for the next month. 
+                    </p>
+                    </div>
+                </div>
+        </div>
+       
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-md-6 p-3 m-4">
+                <a class="text-decoration-none text-dark" href="{% url 'vmprod' %}">
+                    <div class="card my-card shadow text-center p-3">
+                        <h4>Get Started! <i class="fas fa-sharp fa-solid fa-briefcase"></i></h4>
+                       
+                    </div>
+                </a>
+            </div>
+           
+    </div>
+    {% else %}
+<div>You are seeing this page because you d not have the permissions to view the dashboard. Kindly wait till the super admin grants the access. </div>
+    {% endif %}
+{% endblock %}

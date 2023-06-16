@@ -1,0 +1,64 @@
+{% extends 'partials/base.html' %}
+{% block title %}Login Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;">
+                <div class="card-header " style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                background-image:linear-gradient(
+                    to right, 
+                    #d33f7d 0%,
+                    #b9566f 51%,
+                    #f1da71 100%
+                );
+                border-color: #ce8edf; color: black;">
+                    Profile Page
+                </div>
+                <div class="card-body" style="background-color: black;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4" style="color: #ebe0b3;"> Profile Information</span> <a class="btn my-card btn-sm float-right"
+                                href="{% url 'user-profile-update' %}" style=" margin: 20px;height: 40px; 
+                                width: 130px; border-radius: 25px; box-shadow: 5px 3px 6px rgb(160, 51, 84);border: #b9566f;
+                                 color: rgb(212, 200, 89);">Edit</a>
+                            <hr>
+                            <table class="table" style="background-color: black;color: #b9566f; border: #d33f7d;">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td>{{ user.username }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td>{{ user.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone</th>
+                                        <td>{{user.profile.phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td>{{user.profile.address}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-thumbnail rounded-circle" src="{{user.profile.image.url }}" alt=""> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

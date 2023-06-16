@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+{% block title %}Demand Forecast{% endblock %}
+
+{% block content %}
+
+<h1>Demand Forecast</h1>
+    <form method="post" action="/outDFO" target="_blank">
+        {% csrf_token %}
+        <label for="selected_shop">Select a shop id:</label>
+        <select name="selected_shop" id="selected_shop">
+			{% for id in shop_ids %}
+				<option value="{{ id }}">{{ id }}</option>
+			{% endfor %}
+		</select>
+        <br><br> {% csrf_token %}
+        <label for="selected_product">Select a product:</label>
+        <select name="selected_product" id="selected_product">
+			{% for product in products %}
+				<option value="{{ product }}">{{ product }}</option>
+			{% endfor %}
+		</select>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

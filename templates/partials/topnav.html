@@ -1,0 +1,69 @@
+    <!--Topside-->
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;">
+                    <div class="card-header bg-secondary" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                    background-image:linear-gradient(
+                        to right, 
+                        #d33f7d 0%,
+                        #b9566f 51%,
+                        #f1da71 100%
+                    );
+                    border-color: #ce8edf;
+                    color: black;
+                    ">
+                        Notification
+                    </div>
+                    <div class="card-body" style="color:pink;background-color: rgb(10, 10, 10);border-color: black;">
+                        <marquee behavior="" direction="">
+                            <h6 class="my-4">You have new notification</h6>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8" style="border-radius: 10px;border-color: black;">
+                <div class="card" style="color: white; background-color: black;border-color: black;border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <div class="card-header bg-secondary text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                    background-image:linear-gradient(
+                        to right, 
+                        #d33f7d 0%,
+                        #b9566f 51%,
+                        #f1da71 100%
+                    );
+                    border-color: #ce8edf; color: black;">
+                        Statistics
+                    </div>
+                    <div class="card-body">  
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-staff' %}">
+                                    <div class="card my-card shadow text-center p-3" style="color: pink; background-color: black;border-color: black;">
+                                        <h4>Shops</h4>
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-users' %}">
+                                    <div class="card my-card shadow text-center p-3" style="color: pink; background-color: black;border-color: black;">
+                                        <h4>Products </h4>
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-sales' %}">
+                                    <div class="card my-card shadow text-center p-3" style="color: pink; background-color: black;border-color: black;">
+                                        <h4>User </h4>
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Topside-->

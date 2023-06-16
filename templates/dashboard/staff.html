@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+{% block title %}Staff Page {% endblock %}
+
+{% block content %}
+<!--End Topside-->
+
+
+{% include 'partials/topnav.html' %}
+
+    <!--Table-->
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <table class="table bg-white">
+                    <thead class="bg-secondary">
+                        <tr class="text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a class="btn btn-secondary btn-sm" href="">View</a></th>
+                            <td>Rishika</td>
+                            <td>Raveendran</td>
+                            <td>@rishiRocky</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="btn btn-secondary btn-sm" href="">View</a></th>
+                            <td>Mariya</td>
+                            <td>Thomas</td>
+                            <td>@martho</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="btn btn-secondary btn-sm" href="">View</a></th>
+                            <td>Meenakshi</td>
+                            <td>K</td>
+                            <td>@meenaski</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--End Table-->
+
+{% endblock %}

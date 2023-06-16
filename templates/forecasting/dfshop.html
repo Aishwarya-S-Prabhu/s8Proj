@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %} {% block title %}Demand Forecast {% endblock%} {%  block content %}
+<div class="container" style="margin: 50px; box-shadow: 2px 1px 5px rgb(245, 220, 109); height: 300px; padding-left: 450px; padding-top: 50px;">
+<h1 style="color:rgb(194, 158, 61); ">Demand Forecast</h1>
+<hr style=" background-color: aliceblue;" size="5"> 
+<br >
+<form method="post" action="/outDFS" target="_blank">
+  {% csrf_token %}
+  <label for="selected_product" style="color: rgb(233, 206, 213);">Select a product:</label>
+  <select name="selected_product" id="selected_product">
+    {% for product in products %}
+    <option value="{{ product }}">{{ product }}</option>
+    {% endfor %}
+  </select>
+  <br /><br />
+  <input type="submit" value="Submit" style=" margin: 20px;height: 40px; 
+  width: 130px; border-radius: 25px; box-shadow: 5px 3px 6px rgb(160, 51, 84);border: #b9566f;
+   color: rgb(10, 10, 10);" />
+</form>
+</div>
+{% endblock %}

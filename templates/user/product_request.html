@@ -1,0 +1,48 @@
+{% extends 'partials/base.html' %}
+{% block title %}Product request Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row my-4">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+          <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;">
+              <div class="card-header" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+              background-image:linear-gradient(
+                  to right, 
+                  #d33f7d 0%,
+                  #b9566f 51%,
+                  #f1da71 100%
+              );
+              border-color: #ce8edf; color: black;">
+                  Request a Product
+              </div>
+              <div class="card-body" style="background-color: black; color: #f1da71;">
+                  <div class="row">
+                      <div class="col-md-8">
+                          <span class="h4"> Product Details</span> 
+                          <hr>
+                          <form method="post" >
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                           
+                            <input type="submit" value="Submit" style=" margin: 20px;height: 40px; 
+                            width: 130px; border-radius: 25px; box-shadow: 5px 3px 6px rgb(160, 51, 84);border: #b9566f;
+                             color: black;">
+                          </form>
+                      </div>
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

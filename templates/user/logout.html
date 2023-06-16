@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %}
+{% block title %}Logout Page {% endblock %}
+
+{% block content %}
+<div class="container" >
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="  p-3" style="background-color: black; box-shadow: 5px 2px 10px rgb(194, 40, 91);">
+                <h3 style="color: rgb(226, 187, 57);">Logout Page</h3>
+                <hr>
+                <div class="alert" style="box-shadow: 2px 0px 1px rgb(231, 145, 47);">
+                    <h5 style="color: rgb(184, 164, 128);">You have logged out</h5>
+                </div>
+                <a href="{% url 'user_login' %}" style="color: rgb(216, 60, 94);">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

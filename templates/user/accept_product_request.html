@@ -1,0 +1,20 @@
+
+{% extends 'partials/base.html' %}
+{% block title %}Accept product Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h1>Accept Product Request</h1>
+
+  {% if product_request %}
+    <p><strong>Product Request:</strong> {{ product_request }}</p>
+
+    <form method="post">
+      {% csrf_token %}
+      <input type="submit" name="accept" value="Accept">
+      <input type="submit" name="reject" value="Reject">
+    </form>
+  {% else %}
+    <p>No product request found.</p>
+  {% endif %}
+{% endblock %}

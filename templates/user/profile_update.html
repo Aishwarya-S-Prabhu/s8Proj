@@ -1,0 +1,44 @@
+{% extends 'partials/base.html' %}
+{% block title %}Login Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;">
+                <div class="card-header" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                background-image:linear-gradient(
+                    to right, 
+                    #d33f7d 0%,
+                    #b9566f 51%,
+                    #f1da71 100%
+                );
+                border-color: #ce8edf; color: black;">
+                    Profile Page
+                </div>
+                <div class="card-body" style="background-color: black; color: #b9566f;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4"> Profile Information</span> 
+                            <hr>
+                         <form method="POST" enctype="multipart/form-data">
+                             {% csrf_token %}
+                             {{ user_form|crispy }}
+                             {{ profile_form|crispy }}
+                            <input class="btn" type="submit" value="Update" style="box-shadow: 5px 3px 6px rgb(160, 51, 84);">
+                         </form>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

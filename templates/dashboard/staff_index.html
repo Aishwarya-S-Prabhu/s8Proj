@@ -1,0 +1,66 @@
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card" style=" border-top-left-radius: 10px; border-top-right-radius: 10px; border-color: black;">
+                    <div class="card-header" style="border-top-left-radius: 10px; border-top-right-radius: 10px;
+                    background-image:linear-gradient(
+                        to right, 
+                        #d33f7d 0%,
+                        #b9566f 51%,
+                        #f1da71 100%
+                    );
+                    border-color: #ce8edf;
+                    color: black;
+                    ">
+                        Notification
+                    </div>
+                    <div class="card-body" style="color:pink;background-color: rgb(10, 10, 10);border-color: black;">
+                        <marquee behavior="" direction="">
+                            <h6 class="my-4"><a href="{% url 'product_notice_board' %} " style="color: #b9566f;">You have new notification</a></h6>
+                        </marquee>
+                    </div>
+                    <a class="text-decoration-none text-dark" href="{% url 'product_request' %}">
+                        <div class="card my-card shadow text-center p-3">
+                            <h4>Request <i class="fas fa-sharp fa-solid fa-briefcase"></i></h4>
+                           
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        Visualization
+                    </div>
+                    <div class="card-body">  
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a class="text-decoration-none text-dark" href="{% url 'vmshop' %}">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h4>Get Started! <i class="fas fa-sharp fa-solid fa-briefcase"></i></h4>
+                                       
+                                    </div>
+                                </a>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="display:flex;flex-direction:column;">
+             <a href="{% url 'upload_csv'%}"> <button style=" margin: 20px;height: 55px; 
+                width: 180px; border-radius: 25px; box-shadow: 5px 3px 10px rgb(236, 142, 165);
+                 background-color: rgba(238, 217, 125, 0.8); color: black;">Upload sales</button></a>  
+             <a href="/DFShop"> <button style=" margin: 20px;height: 55px; 
+                width: 180px; border-radius: 25px; box-shadow: 5px 3px 10px rgb(245, 220, 109);
+                 background-color: rgba(214, 98, 127, 0.974); color: black;">Demand Forecast</button></a>  
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+ 
+   
